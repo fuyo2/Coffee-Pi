@@ -1,0 +1,13 @@
+body {
+    background-color: #BC1142;
+  }
+
+h3 {
+    color: white;
+}
+
+.center-div-v{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

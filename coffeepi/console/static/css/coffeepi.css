@@ -18,12 +18,15 @@ body {
 
 h3 {
     color: white;
+    text-align: center;
 }
 
-.center-div-v{
+.center-div-v {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .coffee-image{

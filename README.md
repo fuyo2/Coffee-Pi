@@ -12,5 +12,10 @@ unzip Coffee-Pi.zip
 # Navigate into the extracted directory
 cd Coffee-Pi-main/install
 # Run the install.sh script
-bash install.sh
+sudo ./install.sh
+# Navigate into the DB Setup Direcoty
+cd ..
+cd coffeepi
+# Run the db_setup.sh script
+sudo ./db_setup.sh
 ```

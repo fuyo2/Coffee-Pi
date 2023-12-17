@@ -2,6 +2,8 @@
  Portal used to display the coffee brewed.
 
 # Installation Script
+
+## Ubuntu/Pop!_OS 22.04
 ```
 # Download the repository as a zip file
 wget https://github.com/fuyo2/Coffee-Pi/archive/refs/heads/main.zip -O Coffee-Pi.zip

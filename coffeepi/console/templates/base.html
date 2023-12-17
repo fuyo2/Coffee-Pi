@@ -10,44 +10,68 @@
     <title>{% block title %}CoffeePi{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
-<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-<link href="{% static 'css/coffeepi.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/coffeepi.css' %}" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="container-fluid">
+            <div class="row flex-nowrap">
+                
+                <!-- New Sidebar -->
+                <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                      <span class="fs-5 d-none d-sm-inline"> <img src="{% static 'img/logo.png' %}" alt="CoffeePi Logo">
+                    </a>
+                    <ul class="list-unstyled ps-0">
+                    {% for brand in brand_view %}
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                            {{ brand }}
+                        </button>
+                        <div class="collapse" id="home-collapse">
+                          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#" class="link-dark rounded">Overview</a></li>
+                            <li><a href="#" class="link-dark rounded">Updates</a></li>
+                            <li><a href="#" class="link-dark rounded">Reports</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      {% endfor %}
+                      <!-- <li class="border-top my-3"></li> -->
+                    </ul>
+                    <div>
+                        <a href="admin/" <button class="btn btn-danger" style="width:100%"> Admin </button> </a>
+                    </div>
+                </div>
 
-<body>
-<div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="home.html" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline"> <img src="{% static 'img/logo.png' %}" alt="CoffeePi Logo">
-                </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a href="" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                <!-- Old Sidebar -->
+                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                        <a href="" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                            <span class="fs-5 d-none d-sm-inline"> <img src="{% static 'img/logo.png' %}" alt="CoffeePi Logo">
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Jamaican Me Crazy</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Highlander Grogg</span>
-                        </a>
-                    </li>
-                </ul>
-                <hr>
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                            <li class="nav-item">
+                                <a href="" class="nav-link align-middle px-0">
+                                    <span class="ms-1 d-none d-sm-inline">
+                                        {% for brand in brand_view %}
+                                            <li>{{ brand }}</li>
+                                        {% endfor %}
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <hr>
+                        <a href="admin/" <button class="btn btn-danger" style="width:100%"> Admin </button> </a>
+                    </div>
+                <div class="col py-3 center-div-v">
+                    {% block content %} {% endblock %}
+                </div>
             </div>
         </div>
-        <div class="col py-3 center-div-v">
-            {% block content %} {% endblock %}
-        </div>
-    </div>
-</div>
-</body>
+        
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>  
+    </body>
 
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-  </body>
 </html>

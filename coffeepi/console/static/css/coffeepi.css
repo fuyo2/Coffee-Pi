@@ -37,3 +37,7 @@ h3 {
     overflow-y: hidden;
     overflow-x: hidden;
 }
+
+.btn-coffee{
+    margin-bottom: 1px !important;
+}

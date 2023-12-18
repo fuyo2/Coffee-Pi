@@ -16,7 +16,7 @@ body {
     background-color: #BC1142;
   }
 
-h3 {
+.coffee-w-c {
     color: white;
     text-align: center;
 }
@@ -29,15 +29,8 @@ h3 {
     text-align: center;
 }
 
-.coffee-image{
-    min-height : 100%;
-    min-width : 100%;
-    background-size:100% 100%;
-    background-repeat:no-repeat;
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-
-.btn-coffee{
-    margin-bottom: 1px !important;
+.nav-header-blk {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
 }

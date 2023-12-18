@@ -6,7 +6,7 @@ class Coffee(models.Model):
     type = models.CharField(max_length=255)
     roast = models.CharField(max_length=255)
     description = models.CharField(max_length=None)
-    image = models.ImageField(upload_to='images')
+    image = models.ImageField(upload_to='console/static/coffee_img')
 
     def __srt__(self):
         return self.type

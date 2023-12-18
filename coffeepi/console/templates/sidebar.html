@@ -58,3 +58,33 @@
       </li>
     </ul>
   </div>
+
+
+
+
+  <!-- New Sidebar -->
+                <!--<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                      <span class="fs-5 d-none d-sm-inline"> <img src="{% static 'img/logo.png' %}" alt="CoffeePi Logo">
+                    </a>
+                    <ul class="list-unstyled ps-0">
+                    {% for brand in brand_view %}
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                            {{ brand }}
+                        </button>
+                        <div class="collapse" id="home-collapse">
+                          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#" class="link-dark rounded">Overview</a></li>
+                            <li><a href="#" class="link-dark rounded">Updates</a></li>
+                            <li><a href="#" class="link-dark rounded">Reports</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      {% endfor %}
+                      <!-- <li class="border-top my-3"></li> -->
+                    </ul>
+                    <div>
+                        <a href="admin/" <button class="btn btn-danger" style="width:100%"> Admin </button> </a>
+                    </div>
+                </div>

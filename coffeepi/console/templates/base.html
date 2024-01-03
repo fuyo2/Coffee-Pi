@@ -37,32 +37,37 @@
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                     <div class="position-sticky pt-3">
                         <h3 class="nav-header-blk">Brands</h3>
-                        <ul class="nav flex-column">
-                            {% for brand in brand_view %}
+                        <div id="brandLinks">
+                            <ul class="nav flex-column">
+                                <!-- Populate options based on 'brand_view' passed from the backend -->
+                                {% for brand in brand_view %}
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">
+                                    <a class="nav-link" aria-current="page" href="#" value="{{ brand }}">
                                         {{ brand }}
                                     </a>
                                 </li>
-                            {% endfor %}
-                        </ul>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
-                </nav>
+                </nav>                
           
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom center-div-v">
                     <h3 class="coffee-w-c">Select the brewed coffee</h3>
-                        <div class="btn-toolbar mb-2 mb-md-0">
-                        </div>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                    </div>
                 </div>
-                <div class="center-div-v">
-                    {% block card %}{% endblock %}
+                <div class="center-div-v" id="coffeeList">
+                    <!-- Coffee types will be populated here -->
                 </div>
             </main>
+            
         </div>
         </div>
 
         <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/filteredCoffee.js' %}"></script>
     </body>
 
 </html>
